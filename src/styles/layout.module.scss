@@ -5,13 +5,12 @@ div.App {
     background-color: rgb(24, 24, 24);
     display:flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     h1 {
         margin-top: 1rem;
         font-size: 2.7rem;
     }
-    p {
+    p.description {
         margin-top: 0.5rem;
         width: 60%;
         font-weight: 100;

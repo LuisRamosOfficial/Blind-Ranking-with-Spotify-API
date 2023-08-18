@@ -1,0 +1,38 @@
+form.SearchBox {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    p.formLabel {
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+    div.inputBox {
+        display: flex;
+        width: 50vw;
+        border-radius: 30px;
+        height: 50px;
+        background-color: gray;
+        input {
+            width: 90%;
+            font-size: 1rem;
+            padding: 1rem;
+            border: none;
+            outline: none;
+            border-radius: 30px 0px 0px 30px;
+        }
+        button { 
+            // i dont even know how i made it I was broke but i had patience
+            border-radius: 0px 30px 30px 0px;
+            width: 10%;
+            background-color: rgb(211, 211, 211);
+            border: none;
+            cursor: pointer;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/3031/3031293.png');
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+}
