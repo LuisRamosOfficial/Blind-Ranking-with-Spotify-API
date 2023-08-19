@@ -1,11 +1,12 @@
 import { createSignal } from 'solid-js';
 import styles from './styles/layout.module.scss';
 import SpotifySearch from './assets/SpotifySearch';
-
+import GameWindow from './assets/GameWindow/GameWindow';
+import {mockup} from './mockup'
 
 function App() {
 
-//   const [first, setfirst] = createSignal()
+  const [tracks, setTracks] = createSignal(mockup)
   
 
 
@@ -18,7 +19,11 @@ function App() {
 				knowing the order. Test your musical instincts and discover hidden
 				favorites in this exciting twist on playlist enjoyment.
 			</p>
-			<SpotifySearch />
+			{tracks() ? 
+			<GameWindow tracks={tracks()} />
+			:
+			<SpotifySearch setTracks={setTracks} />
+			}
 		</div>
 	);
 }

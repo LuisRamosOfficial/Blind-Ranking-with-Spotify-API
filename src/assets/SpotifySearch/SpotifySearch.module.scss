@@ -1,38 +1,137 @@
-form.SearchBox {
+div.SearchBox {
+	margin-top: 5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	p.formLabel {
+		margin-bottom: 1rem;
+		font-size: 1.4rem;
+		font-weight: 500;
+	}
+	div.inputBox {
+		display: flex;
+		width: 50vw;
+		border-radius: 30px;
+		height: 50px;
+		background-color: gray;
+		input {
+			width: 90%;
+			font-size: 1rem;
+			padding: 1rem;
+			border: none;
+			outline: none;
+			border-radius: 30px 0px 0px 30px;
+		}
+		button {
+			// i dont even know how i made it I was broke but i had patience
+			border-radius: 0px 30px 30px 0px;
+			width: 10%;
+			background-color: rgb(211, 211, 211);
+			border: none;
+			cursor: pointer;
+			background-image: url('https://cdn-icons-png.flaticon.com/512/3031/3031293.png');
+			background-size: 50%;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+}
+
+div.PlaylistPreviewBox {
+	margin-top: 3rem;
+	padding: 1rem;
+	background-color: rgb(33, 33, 33);
+	border-radius: 30px;
+	display: grid;
+	grid-template-areas:
+		'a b'
+		'a c'
+		'a d';
+	grid-template-rows: auto auto 1fr;
+	img {
+		margin-right: 2rem;
+		width: 250px;
+		grid-area: a;
+		border-radius: 30px;
+	}
+	p.PlaylistName {
+		text-align: center;
+		width: 400px;
+		font-size: 1.4rem;
+		margin-bottom: 1rem;
+		margin-top: 1rem;
+		font-weight: 700;
+		grid-area: b;
+	}
+	p.PlaylistTracks {
+		grid-area: c;
+		font-size: 1.2rem;
+		font-weight: 200;
+		text-align: center;
+	}
+	button.StartButton {
+		place-self: center;
+		grid-area: d;
+		width: 160px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #fff;
+		background-image: linear-gradient(
+			to right,
+			#667eea,
+			#764ba2,
+			#6b8dd6,
+			#8e37d7
+		);
+		box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+		cursor: pointer;
+		height: 55px;
+		text-align: center;
+		border: none;
+		background-size: 300% 100%;
+		border-radius: 50px;
+		transition: all 0.4s ease-out;
+		&:hover {
+			background-position: 100% 0;
+		}
+	}
+}
+
+div.LoadingState {
     margin-top: 5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center ;
-    p.formLabel {
-        margin-bottom: 1rem;
-        font-size: 1.4rem;
-        font-weight: 500;
-    }
-    div.inputBox {
-        display: flex;
-        width: 50vw;
-        border-radius: 30px;
-        height: 50px;
-        background-color: gray;
-        input {
-            width: 90%;
-            font-size: 1rem;
-            padding: 1rem;
-            border: none;
-            outline: none;
-            border-radius: 30px 0px 0px 30px;
-        }
-        button { 
-            // i dont even know how i made it I was broke but i had patience
-            border-radius: 0px 30px 30px 0px;
-            width: 10%;
-            background-color: rgb(211, 211, 211);
-            border: none;
-            cursor: pointer;
-            background-image: url('https://cdn-icons-png.flaticon.com/512/3031/3031293.png');
-            background-size: 50%;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-    }
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
+	div {
+		display: inline-block;
+		position: absolute;
+		left: 8px;
+		width: 16px;
+		background: #fff;
+		animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+		&:nth-child(1) {
+			left: 8px;
+			animation-delay: -0.24s;
+		}
+		&:nth-child(2) {
+			left: 32px;
+			animation-delay: -0.12s;
+		}
+		&:nth-child(3) {
+			left: 56px;
+			animation-delay: 0;
+		}
+	}
+}
+
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
+  }
 }
